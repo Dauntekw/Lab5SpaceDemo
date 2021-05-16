@@ -199,10 +199,10 @@
         }
 
         function screenWrap() {
-            if (player.midpoint.x + this.width/2 >= CANVAS_WIDTH) {
+            if (player.midpoint.x + this.width/2 >= 460) {
                 player.x = 1;
             }
-            if (player.x <= 0) {
+            if (player.x <= 20) {
                 player.x = CANVAS_WIDTH - 1;
             }
         }
