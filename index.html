@@ -11,7 +11,7 @@
       //<![CDATA[
         var CANVAS_WIDTH = 480;
         var CANVAS_HEIGHT = 320;
-        var FPS = 30;
+        var FPS = 60;
         
         var player = {
           color: "#00A",
@@ -196,6 +196,15 @@
             a.x + a.width > b.x &&
             a.y < b.y + b.height &&
             a.y + a.height > b.y;
+        }
+
+        function screenWrap() {
+            if (player.x >= CANVAS_WIDTH) {
+                player.x = 1;
+            }
+            if (player.x <= 0) {
+                player.x = CANVAS_WIDTH - 1;
+            }
         }
         
         function handleCollisions() {
