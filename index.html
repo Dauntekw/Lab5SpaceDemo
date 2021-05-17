@@ -127,11 +127,13 @@
           }
         
           if(keydown.left) {
-            player.x -= 10;
+              player.x -= 10;
+              player.screenWrap();
           }
         
           if(keydown.right) {
-            player.x += 10;
+              player.x += 10;
+              player.screenWrap();
           }
         
           //player.x = player.x.clamp(0, CANVAS_WIDTH - player.width);
@@ -199,10 +201,10 @@
         }
 
         function screenWrap() {
-            if (this.x > CANVAS_WIDTH) {
+            if (player.x > CANVAS_WIDTH) {
                 player.x = 1;
             }
-            if (this.x < 0) {
+            if (player.x < 0) {
                 player.x = CANVAS_WIDTH - 1;
             }
         }
@@ -231,7 +233,7 @@
         };
         
         player.sprite = Sprite("player");
-        player.screenWrap();
+        
         player.draw = function() {
           this.sprite.draw(canvas, this.x, this.y);
         };
