@@ -231,7 +231,7 @@
         };
         
         player.sprite = Sprite("player");
-        
+        player.screenWrap();
         player.draw = function() {
           this.sprite.draw(canvas, this.x, this.y);
         };
