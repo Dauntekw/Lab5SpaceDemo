@@ -102,11 +102,10 @@
           };
         
           I.explode = function() {
-            Sound.play("explosion");
-        
-            this.active = false;
-            // Extra Credit: Add an explosion graphic
+              Sound.play("explosion");
               I.sprite = Sprite("Explosion");
+              this.active = false;
+              // Extra Credit: Add an explosion graphic
           };
         
           return I;
