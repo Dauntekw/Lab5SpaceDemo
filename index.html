@@ -128,12 +128,16 @@
         
           if(keydown.left) {
               player.x -= 10;
-              player.screenWrap();
+              if (player.x < 0) {
+                  player.x = CANVAS_WIDTH - 1;
+              }
           }
         
           if(keydown.right) {
               player.x += 10;
-              player.screenWrap();
+              if (player.x > CANVAS_WIDTH) {
+                  player.x = 1;
+              }
           }
         
           //player.x = player.x.clamp(0, CANVAS_WIDTH - player.width);
